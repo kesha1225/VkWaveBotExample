@@ -1,0 +1,3 @@
+umongo~=2.2.0
+motor~=2.1.0
+vkwave~=0.2.6
