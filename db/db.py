@@ -1,8 +1,8 @@
 import asyncio
 import contextvars
-from typing import TypeVar, Type
 
-import umongo
+from typing import TypeVar, Type
+from umongo.frameworks import MotorAsyncIOInstance
 from motor.motor_asyncio import AsyncIOMotorClient
 
 
@@ -51,7 +51,7 @@ class Instance(ContextInstanceMixin):
         else:
             self.db = db_
 
-        self.instance = umongo.Instance(self.db)
+        self.instance = MotorAsyncIOInstance(self.db)
 
         self.set_current(self)
 
